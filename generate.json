@@ -1,0 +1,12 @@
+{
+    "name": "Zonas",
+    "source": "core",
+    "rootDir": "./java/modules",
+    "type": "api",
+    "schemaType": "not-root",
+    "module": "zone",
+    "package": "com.caprepa.apivaleamigo",
+    "properties": [
+        { "type": "String", "name": "name" }
+    ]
+}

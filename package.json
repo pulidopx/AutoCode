@@ -1,0 +1,16 @@
+{
+  "name": "modulesgenerator",
+  "version": "1.0.0",
+  "description": "Proyect for create Modules Template in HEX ARCH. JAVA AND ANGULAR.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon ."
+  },
+  "author": "Pulidopx",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
