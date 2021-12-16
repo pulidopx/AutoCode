@@ -35,8 +35,8 @@ export class ${capitalize(reqFile.module)}ServiceAdapter implements ${capitalize
     async get${capitalize(reqFile.module)}Data(${(reqFile.module)}?: ${capitalize(reqFile.module)}): Promise<${capitalize(reqFile.module)}Response> {
         let ${(reqFile.module)}List : ${capitalize(reqFile.module)}Response;
         const query = formatter.toQueryParams({
-            ...(zone.id${capitalize(reqFile.module)} ? {id${capitalize(reqFile.module)}: zone.id${capitalize(reqFile.module)}} : {}),
-            ...(zone.status ? {idStatus: zone.status} : {}),
+            ...(${(reqFile.module)}.id${capitalize(reqFile.module)} ? {id${capitalize(reqFile.module)}: ${(reqFile.module)}.id${capitalize(reqFile.module)}} : {}),
+            ...(${(reqFile.module)}.status ? {idStatus: ${(reqFile.module)}.status} : {}),
             ${paramsFormatter(reqFile.properties, reqFile)}
         })
         ${(reqFile.module)}List = await this.http.get<${capitalize(reqFile.module)}Response>(\`\${this.url}/${(reqFile.module)}s\`)
