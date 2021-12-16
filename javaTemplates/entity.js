@@ -14,7 +14,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity()
-@Table( name = "${reqFile.source}_${reqFile.module}" )
+@Table( name = "${reqFile.source}_${reqFile.module}s" )
 @Getter
 @Setter
 @NamedEntityGraph(

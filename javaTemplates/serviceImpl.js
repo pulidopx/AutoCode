@@ -7,7 +7,7 @@ module.exports = function(reqFile) {
   return `
 package ${reqFile.package}.modules.${reqFile.source}.infrastructure.services;
 
-import ${reqFile.package}.modules.${reqFile.source}.domain.models.Zones;
+import ${reqFile.package}.modules.${reqFile.source}.domain.models.${capitalize(reqFile.module)};
 import ${reqFile.package}.modules.${reqFile.source}.domain.ports.out.persistence.${capitalize(reqFile.module)}Persistence;
 import ${reqFile.package}.modules.${reqFile.source}.domain.services.${capitalize(reqFile.module)}Service;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +26,13 @@ public class ${capitalize(reqFile.module)}ServiceImpl implements ${capitalize(re
   }
 
   @Override
-  public Zones save${capitalize(reqFile.module)}(${capitalize(reqFile.module)} ${reqFile.module}) {
+  public ${capitalize(reqFile.module)} save${capitalize(reqFile.module)}(${capitalize(reqFile.module)} ${reqFile.module}) {
     return this.${reqFile.module}Persistence.save${capitalize(reqFile.module)}(${reqFile.module});
+  }
+
+  @Override
+  public Zone get${capitalize(reqFile.module)}ById(Integer id${capitalize(reqFile.module)}) {
+    return this.${(reqFile.module)}Persistence.get${capitalize(reqFile.module)}ById(id${capitalize(reqFile.module)});
   }
 }
   `;

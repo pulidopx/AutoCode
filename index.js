@@ -1,16 +1,26 @@
-const fs = require('fs');
-const path = require('path');
-const reqFile = require('./generate.json');
+const jsonGenerator = require('./generate.json');
 const generateJava = require('./generateJavaFiles');
+const generateTS = require('./generateTSfiles');
+
 console.log('=============================================================\n');
 console.log('=============== Welcome to Template Generator ===============\n');
 console.log('=============================================================\n');
 
 
 console.log('\n');
-console.log('GENERATE MODULE $JAVA - CORE');
+console.info('GENERATE MODULES - ');
 console.log('\n');
 
-if (reqFile.type) {
-    generateJava(reqFile);
+
+for (let index = 0; index < jsonGenerator.length; index++) {
+    const reqFile = jsonGenerator[index];
+    
+    if (reqFile.type === 'api') {
+        generateJava(reqFile);
+    }
+    
+    
+    if (reqFile.type === 'front') {
+        generateTS(reqFile);
+    }
 }

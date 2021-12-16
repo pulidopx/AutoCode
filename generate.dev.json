@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Zonas",
+        "source": "core",
+        "rootDir": "/home/jose/PROYECTOS/new_company_front/src/app/modules",
+        "type": "front",
+        "schemaType": "not-root",
+        "module": "zone",
+        "route": "core/zones",
+        "properties": [
+            {
+                "type": "String",
+                "name": "name",
+                "label": "Nombre",
+                "required": true,
+                "maxLength": 20 
+            }
+        ]
+    },
+    {
+        "name": "Zonas",
+        "source": "core",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "zone",
+        "package": "com.caprepa.apivaleamigo",
+        "properties": [
+            { "type": "String", "name": "name" }
+        ]
+    }
+]

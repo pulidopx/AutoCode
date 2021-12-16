@@ -8,14 +8,13 @@ module.exports = function(reqFile) {
 package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.in.rest;
 
 import ${reqFile.package}.modules.${reqFile.source}.domain.models.${capitalize(reqFile.module)};
-package com.caprepa.apivaleamigo.modules.core.infrastructure.adapters.in.rest;
 
 
 import ${reqFile.package}.infrastructure.response.Response;
 
 import ${reqFile.package}.modules.${reqFile.source}.domain.models.${capitalize(reqFile.module)};
 import ${reqFile.package}.modules.${reqFile.source}.domain.ports.in.rest.ZoneRest;
-import ${reqFile.package}.modules.${reqFile.source}.domain.services.ZoneService;
+import ${reqFile.package}.modules.${reqFile.source}.domain.services.${capitalize(reqFile.module)}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +25,7 @@ import java.util.List;
 import java.util.Set;
 
 @RestController
-@RequestMapping("${reqFile.module.toLowerCase()}")
+@RequestMapping("${reqFile.module.toLowerCase()}s")
 public class ${capitalize(reqFile.module)}Controller implements ${capitalize(reqFile.module)}Rest {
   @Autowired
   private ${capitalize(reqFile.module)}Service ${reqFile.module.toLowerCase()}Service;
@@ -37,7 +36,7 @@ public class ${capitalize(reqFile.module)}Controller implements ${capitalize(req
           @RequestParam( name = "idStatus", required = false, defaultValue = "" )  Integer idStatus
   ) {
       try {
-          Set<${capitalize(reqFile.module)}> ${reqFile.module.toLowerCase()}List = this.${reqFile.module.toLowerCase()}Service.getZones( id${capitalize(reqFile.module)}, idStatus );
+          Set<${capitalize(reqFile.module)}> ${reqFile.module.toLowerCase()}List = this.${reqFile.module.toLowerCase()}Service.get${capitalize(reqFile.module)}( id${capitalize(reqFile.module)}, idStatus );
 
           ResponseEntity.status(HttpStatus.OK).build().getStatusCode();
           return Response.ok()
@@ -50,7 +49,7 @@ public class ${capitalize(reqFile.module)}Controller implements ${capitalize(req
       }
   }
 
-  @PutMapping
+  @PostMapping
   public Response save${capitalize(reqFile.module)}(@RequestBody ${capitalize(reqFile.module)} ${reqFile.module.toLowerCase()}) {
       try {
           List<${capitalize(reqFile.module)}> ${reqFile.module.toLowerCase()}List = new ArrayList<>();

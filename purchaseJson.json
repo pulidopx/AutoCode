@@ -1,0 +1,129 @@
+[
+    {
+        "name": "Compras",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "root",
+        "module": "purchase",
+        "route": "credit/purchases",
+        "properties": [
+            { "type": "Integer", "name": "idClient" },
+            { "type": "Integer", "name": "idCredit" },
+            { "type": "Integer", "name": "idChargeType" },
+            { "type": "Integer", "name": "idBranch" },
+            { "type": "Integer", "name": "idParent" },
+            { "type": "Integer", "name": "fortnights" },
+            { "type": "Integer", "name": "amount" },
+            { "type": "Integer", "name": "interest" },
+            { "type": "Date", "name": "date" },
+            { "type": "Boolean", "name": "isPaid" },
+            { "type": "String", "name": "cancellationNote" },
+            { "type": "Date", "name": "registered" },
+            { "type": "Double", "name": "insurance" }
+        ]
+    },
+    {
+        "name": "Creditos",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "credits",
+        "properties": [
+            { "type": "Integer", "name": "idClient" },
+            { "type": "Integer", "name": "idCreditType" },
+            { "type": "Integer", "name": "idConfiguration" },
+            { "type": "Integer", "name": "idLockingReason" },
+            { "type": "Integer", "name": "idAutomaticLock" },
+            { "type": "Date", "name": "created" },
+            { "type": "Date", "name": "authorized" },
+            { "type": "Double", "name": "initial" },
+            { "type": "Date", "name": "current" },
+            { "type": "Boolean", "name": "preauthorized" },
+            { "type": "String", "name": "promissory_note" },
+            { "type": "Date", "name": "maximum" },
+            { "type": "Boolean", "name": "automatic_increase_decrement" },
+            { "type": "Boolean", "name": "has_insurance_death" },
+            { "type": "Double", "name": "due_locking_date" },
+            { "type": "Boolean", "name": "has_insurance_assault" },
+            { "type": "Date", "name": "punish_date" }
+        ]
+    },
+    {
+        "name": "Automatic Lock",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "creditAutomaticLock",
+        "properties": [
+            { "type": "Integer", "name": "idCredit" },
+            { "type": "Integer", "name": "idAutomaticLock" },
+            { "type": "Integer", "name": "start" },
+            { "type": "Integer", "name": "end" },
+            { "type": "Integer", "name": "dueDays" },
+            { "type": "Integer", "name": "balance" }
+        ]
+    },
+    {
+        "name": "tipo credito",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "creditType",
+        "properties": [
+            { "type": "String", "name": "name" },
+            { "type": "Integer", "name": "idCredit" },
+            { "type": "Integer", "name": "experience" },
+            { "type": "String", "name": "name" },
+            { "type": "Double", "name": "minimum_fortnightly" },
+            { "type": "Double", "name": "minimum_sold" },
+            { "type": "Integer", "name": "minimum_scoring" },
+            { "type": "Double", "name": "inital" },
+            { "type": "Integer", "name": "automatic_increase_decrement" },
+            { "type": "Double", "name": "promissory_note" }
+        ]
+    },
+    {
+        "name": "tipo credito",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "creditType",
+        "properties": [
+            { "type": "String", "name": "name" },
+            { "type": "Integer", "name": "idCredit" },
+            { "type": "Integer", "name": "experience" },
+            { "type": "String", "name": "name" },
+            { "type": "Double", "name": "minimum_fortnightly" },
+            { "type": "Double", "name": "minimum_sold" },
+            { "type": "Integer", "name": "minimum_scoring" },
+            { "type": "Double", "name": "inital" },
+            { "type": "Integer", "name": "automatic_increase_decrement" },
+            { "type": "Double", "name": "promissory_note" }
+        ]
+    },
+    {
+        "name": "documentos credito",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "customerFiles",
+        "properties": [
+            { "type": "String", "name": "idCustomers" },
+            { "type": "Integer", "name": "idCustomersFileType" },
+            { "type": "Integer", "name": "experience" },
+            { "type": "String", "name": "name" },
+            { "type": "Double", "name": "minimum_fortnightly" },
+            { "type": "Double", "name": "minimum_sold" },
+            { "type": "Integer", "name": "minimum_scoring" },
+            { "type": "Size", "name": "inital" },
+            { "type": "String", "name": "filename" },
+            { "type": "Date", "name": "uploaded" }
+        ]
+    }
+]

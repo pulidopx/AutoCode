@@ -73,7 +73,16 @@ public class ${capitalize(reqFile.module)}PersistenceMysql implements ${capitali
       return ${reqFile.module};
     }
 
+    @Override
+    public ${capitalize(reqFile.module)} get${capitalize(reqFile.module)}ById(Integer id${capitalize(reqFile.module)}) {
+        CriteriaAdapter<${capitalize(reqFile.module)}Entity> criteriaAdapter =  new CriteriaAdapter<>( entityManagerFactory );
+        criteriaAdapter.init( ${capitalize(reqFile.module)}Entity.class );
+        criteriaAdapter.where( criteriaAdapter.equal( "id${capitalize(reqFile.module)}", id${capitalize(reqFile.module)} ) );
+        ${capitalize(reqFile.module)} ${reqFile.module} = ${reqFile.module}Mapper.toModel( ( ${capitalize(reqFile.module)}Entity ) criteriaAdapter.getSingleResult() );
+
+        return ${reqFile.module};
+    }
+
 }
-  
   `;
 }
