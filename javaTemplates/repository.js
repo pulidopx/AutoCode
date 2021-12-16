@@ -7,7 +7,7 @@ module.exports = function(reqFile) {
   return `
 package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.out.persistence.mysql.repositories;
 
-import ${reqFile.package}.modules.core.infrastructure.adapters.out.persistence.mysql.entities.${capitalize(reqFile.module)}Entity;
+import ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.out.persistence.mysql.entities.${capitalize(reqFile.module)}Entity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

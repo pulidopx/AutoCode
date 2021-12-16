@@ -39,7 +39,7 @@ module.exports = function(reqFile) {
       return;
     }
 
-    if (reqFile.schemaType === 'not-root') {
+    if (reqFile.schemaType === 'root') {
 
       console.log(`GENERATE DOMAIN ${capitalize(reqFile.module)}.java \n`);
       const modelPath = `${reqFile.rootDir}/${reqFile.source}/domain/models/${capitalize(reqFile.module)}.java`;

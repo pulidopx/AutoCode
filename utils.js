@@ -220,6 +220,18 @@ const paramsFormatter = (props, reqFile) => {
     return propString;
 }
 
+const importModelReferences = (props, reqFile) => {
+    let propString = '';
+    for (let index = 0; index < props.length; index++) {
+        const prop = props[index];
+        if (prop.importable) {
+            propString += `
+import ${reqFile.package}.modules.${prop.source ||reqFile.source}.domain.models.${capitalize(prop.name)};`;  
+        }
+    }
+    return propString;
+}
+
 const generateDocumentFile = (Path, Source, cb) => {
     rimraf(Path, function () {
         fs.appendFile(Path, Source, function (err) {
@@ -234,6 +246,7 @@ module.exports = {
     iterateModelFront,
     iterateModelsProps,
     iterateEntityProps,
+    importModelReferences,
     iterateAutoForm,
     paramsFormatter,
     iterateGettersAndSettersModel,

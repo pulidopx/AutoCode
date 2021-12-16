@@ -1,11 +1,11 @@
 "use strict";
 
-const { capitalize, iterateModelsProps, iterateGettersAndSettersModel } = require("../utils");
+const { capitalize, iterateModelsProps, iterateGettersAndSettersModel, importModelReferences } = require("../utils");
 
 
 module.exports = function(reqFile) {
-  return `
-package ${reqFile.package}.modules.${reqFile.source}.domain.models;
+  return `package ${reqFile.package}.modules.${reqFile.source}.domain.models;
+${importModelReferences(reqFile.properties, reqFile)}
 
 public class ${capitalize(reqFile.module)} {
     private Integer id${capitalize(reqFile.module)};

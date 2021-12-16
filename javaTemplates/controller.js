@@ -4,16 +4,11 @@ const { capitalize } = require("../utils");
 
 
 module.exports = function(reqFile) {
-  return `
-package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.in.rest;
-
-import ${reqFile.package}.modules.${reqFile.source}.domain.models.${capitalize(reqFile.module)};
-
+  return `package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.in.rest;
 
 import ${reqFile.package}.infrastructure.response.Response;
-
 import ${reqFile.package}.modules.${reqFile.source}.domain.models.${capitalize(reqFile.module)};
-import ${reqFile.package}.modules.${reqFile.source}.domain.ports.in.rest.ZoneRest;
+import ${reqFile.package}.modules.${reqFile.source}.domain.ports.in.rest.${capitalize(reqFile.module)}Rest;
 import ${reqFile.package}.modules.${reqFile.source}.domain.services.${capitalize(reqFile.module)}Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

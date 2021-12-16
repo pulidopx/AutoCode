@@ -1,80 +1,103 @@
 [
     {
-        "name": "Compras",
+        "name": "Clientes",
         "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company_front/src/app/modules",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
         "type": "api",
         "schemaType": "root",
-        "module": "purchase",
+        "module": "customer",
+        "package": "com.caprepa.apivaleamigo",
         "route": "credit/clients",
         "properties": [
-            { "type": "Integer", "name": "idClient" },
-            { "type": "Integer", "name": "idCredit" },
-            { "type": "Integer", "name": "idChargeType" },
-            { "type": "Integer", "name": "idBranch" },
-            { "type": "Integer", "name": "idParent" },
-            { "type": "Integer", "name": "fortnights" },
-            { "type": "Integer", "name": "amount" },
-            { "type": "Integer", "name": "interest" },
-            { "type": "Date", "name": "date" },
-            { "type": "Boolean", "name": "isPaid" },
-            { "type": "String", "name": "cancellationNote" },
-            { "type": "Date", "name": "registered" },
-            { "type": "Double", "name": "insurance" }
+            { "type": "CPerson", "name": "cperson", "importable": true },
+            { "type": "Branch", "name": "branch", "importable": true, "source": "core" },
+            { "type": "CustomerFile", "name": "customerFile", "importable": true }
         ]
     },
     {
-        "name": "Creditos",
+        "name": "Clientes Documentos",
         "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company_front/src/app/modules",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
         "type": "api",
         "schemaType": "not-root",
-        "module": "credits",
-        "route": "credit/credits",
+        "module": "customerFile",
+        "package": "com.caprepa.apivaleamigo",
         "properties": [
-            { "type": "Integer", "name": "idClient" },
-            { "type": "Integer", "name": "idCreditType" },
-            { "type": "Integer", "name": "idConfiguration" },
-            { "type": "Integer", "name": "idLockingReason" },
-            { "type": "Integer", "name": "idAutomaticLock" },
-            { "type": "Date", "name": "created" },
-            { "type": "Date", "name": "authorized" },
-            { "type": "Double", "name": "initial" },
-            { "type": "Date", "name": "current" },
-            { "type": "Boolean", "name": "preauthorized" },
-            { "type": "String", "name": "promissory_note" },
-            { "type": "Date", "name": "maximum" },
-            { "type": "Boolean", "name": "automatic_increase_decrement" },
-            { "type": "Boolean", "name": "has_insurance_death" },
-            { "type": "Double", "name": "due_locking_date" },
-            { "type": "Boolean", "name": "has_insurance_assault" },
-            { "type": "Date", "name": "punish_date" }
-
+            { "type": "Integer", "name": "idCustomer" },
+            { "type": "CustomerFileType", "name": "customerFileType", "importable": true },
+            { "type": "String", "name": "name" },
+            { "type": "String", "name": "mymetype" },
+            { "type": "Integer", "name": "size" },
+            { "type": "String", "name": "uploaded" },
+            { "type": "String", "name": "filename" }
+        ]
+    },
+    {
+        "name": "Cliente Typos Documento",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "customerFileType",
+        "package": "com.caprepa.apivaleamigo",
+        "properties": [
+            { "type": "Integer", "name": "required" },
+            { "type": "String", "name": "name" }
+        ]
+    },
+    {
+        "name": "Dias Feriados",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "holidays",
+        "package": "com.caprepa.apivaleamigo",
+        "properties": [
+            { "type": "String", "name": "date" }
+        ]
+    },
+    {
+        "name": "Telefonos",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "package": "com.caprepa.apivaleamigo",
+        "module": "phones",
+        "properties": [
+            { "type": "PhoneType", "name": "phoneType", "importable": true },
+            { "type": "CPerson", "name": "cperson", "importable": true },
+            { "type": "Integer", "name": "number" }
 
         ]
     },
     {
-        "name": "Cliente",
+        "name": "Tipos Telefonos",
         "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company_front/src/app/modules",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
         "type": "api",
-        "schemaType": "root",
-        "module": "purchase",
-        "route": "credit/clients",
+        "schemaType": "not-root",
+        "package": "com.caprepa.apivaleamigo",
+        "module": "phoneType",
         "properties": [
-            { "type": "Integer", "name": "idClient" },
-            { "type": "Integer", "name": "idCredit" },
-            { "type": "Integer", "name": "idChargeType" },
-            { "type": "Integer", "name": "idBranch" },
-            { "type": "Integer", "name": "idParent" },
-            { "type": "Integer", "name": "fortnights" },
-            { "type": "Integer", "name": "amount" },
-            { "type": "Integer", "name": "interest" },
-            { "type": "Date", "name": "date" },
-            { "type": "Boolean", "name": "isPaid" },
-            { "type": "String", "name": "cancellationNote" },
-            { "type": "Date", "name": "registered" },
-            { "type": "Double", "name": "insurance" }
+            { "type": "String", "name": "name" }
+        ]
+    },
+    {
+        "name": "References",
+        "source": "credit",
+        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
+        "type": "api",
+        "schemaType": "not-root",
+        "module": "references",
+        "package": "com.caprepa.apivaleamigo",
+        "properties": [
+            { "type": "CPerson", "name": "cperson", "importable": true },
+            { "type": "String", "name": "relationship" },
+            { "type": "String", "name": "phone" },
+            { "type": "String", "name": "fullname" }
         ]
     }
+    
 ]

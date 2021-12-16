@@ -5,7 +5,7 @@ const { capitalize } = require("../utils");
 
 module.exports = function(reqFile) {
   return `
-package ${reqFile.package}.modules.core.infrastructure.adapters.out.persistence.mysql;
+package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.out.persistence.mysql;
 
 import ${reqFile.package}.infrastructure.adapters.CriteriaAdapter;
 import ${reqFile.package}.modules.${reqFile.source}.domain.models.${capitalize(reqFile.module)};

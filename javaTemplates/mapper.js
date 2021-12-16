@@ -34,7 +34,7 @@ public class ${capitalize(reqFile.module)}Mapper extends Mapper<${capitalize(req
   @Override
   public Set<${capitalize(reqFile.module)}> toModelList(Set<${capitalize(reqFile.module)}Entity> ${reqFile.module}EntityList) {
       Set<${capitalize(reqFile.module)}> modelList = new HashSet<>();
-      for ( ${capitalize(reqFile.module)}Entity ${reqFile.module}Entity : zoneEntityList ) {
+      for ( ${capitalize(reqFile.module)}Entity ${reqFile.module}Entity : ${(reqFile.module)}EntityList ) {
           ${capitalize(reqFile.module)} ${reqFile.module} = toModel(${reqFile.module}Entity);
           modelList.add( ${reqFile.module} );
       }

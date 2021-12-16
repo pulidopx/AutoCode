@@ -31,7 +31,7 @@ public class ${capitalize(reqFile.module)}ServiceImpl implements ${capitalize(re
   }
 
   @Override
-  public Zone get${capitalize(reqFile.module)}ById(Integer id${capitalize(reqFile.module)}) {
+  public ${capitalize(reqFile.module)} get${capitalize(reqFile.module)}ById(Integer id${capitalize(reqFile.module)}) {
     return this.${(reqFile.module)}Persistence.get${capitalize(reqFile.module)}ById(id${capitalize(reqFile.module)});
   }
 }

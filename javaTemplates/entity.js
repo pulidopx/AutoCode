@@ -1,11 +1,11 @@
 "use strict";
 
-const { capitalize, iterateEntityProps } = require("../utils");
+const { capitalize, iterateEntityProps, importModelReferences } = require("../utils");
 
 
 module.exports = function(reqFile) {
-  return `
-package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.out.persistence.mysql.entities;
+  return `package ${reqFile.package}.modules.${reqFile.source}.infrastructure.adapters.out.persistence.mysql.entities;
+${importModelReferences(reqFile.properties, reqFile)}
 
 import lombok.Getter;
 import lombok.Setter;
