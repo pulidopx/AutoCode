@@ -60,7 +60,7 @@ module.exports = function(reqFile) {
       // GENERATE REST  modules.module.domain.ports.in
       console.log(`GENERATE DOMAIN PORTS IN ${capitalize(reqFile.module)}Rest.java \n`);
       const restPath = `${reqFile.rootDir}/${reqFile.source}/domain/ports/in/rest/${capitalize(reqFile.module)}Rest.java`;
-      // generateDocumentFile(restPath, restSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}Rest.java" created successfully.`));
+      generateDocumentFile(restPath, restSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}Rest.java" created successfully.`));
   
       // GENERATE PERSISTENCE modules.module.domain.ports.out.persistence
       console.log(`GENERATE DOMAIN PORTS OUT ${capitalize(reqFile.module)}Persistence.java \n`);
