@@ -1,103 +1,15 @@
 [
     {
-        "name": "Clientes",
+        "name": "Supervisores",
         "source": "credit",
         "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
         "type": "api",
         "schemaType": "root",
-        "module": "customer",
+        "module": "supervisor",
         "package": "com.caprepa.apivaleamigo",
-        "route": "credit/clients",
+        "route": "core/menus",
         "properties": [
-            { "type": "CPerson", "name": "cperson", "importable": true },
-            { "type": "Branch", "name": "branch", "importable": true, "source": "core" },
-            { "type": "CustomerFile", "name": "customerFile", "importable": true }
-        ]
-    },
-    {
-        "name": "Clientes Documentos",
-        "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
-        "type": "api",
-        "schemaType": "not-root",
-        "module": "customerFile",
-        "package": "com.caprepa.apivaleamigo",
-        "properties": [
-            { "type": "Integer", "name": "idCustomer" },
-            { "type": "CustomerFileType", "name": "customerFileType", "importable": true },
-            { "type": "String", "name": "name" },
-            { "type": "String", "name": "mymetype" },
-            { "type": "Integer", "name": "size" },
-            { "type": "String", "name": "uploaded" },
-            { "type": "String", "name": "filename" }
-        ]
-    },
-    {
-        "name": "Cliente Typos Documento",
-        "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
-        "type": "api",
-        "schemaType": "not-root",
-        "module": "customerFileType",
-        "package": "com.caprepa.apivaleamigo",
-        "properties": [
-            { "type": "Integer", "name": "required" },
-            { "type": "String", "name": "name" }
-        ]
-    },
-    {
-        "name": "Dias Feriados",
-        "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
-        "type": "api",
-        "schemaType": "not-root",
-        "module": "holidays",
-        "package": "com.caprepa.apivaleamigo",
-        "properties": [
-            { "type": "String", "name": "date" }
-        ]
-    },
-    {
-        "name": "Telefonos",
-        "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
-        "type": "api",
-        "schemaType": "not-root",
-        "package": "com.caprepa.apivaleamigo",
-        "module": "phones",
-        "properties": [
-            { "type": "PhoneType", "name": "phoneType", "importable": true },
-            { "type": "CPerson", "name": "cperson", "importable": true },
-            { "type": "Integer", "name": "number" }
-
-        ]
-    },
-    {
-        "name": "Tipos Telefonos",
-        "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
-        "type": "api",
-        "schemaType": "not-root",
-        "package": "com.caprepa.apivaleamigo",
-        "module": "phoneType",
-        "properties": [
-            { "type": "String", "name": "name" }
-        ]
-    },
-    {
-        "name": "References",
-        "source": "credit",
-        "rootDir": "/home/jose/PROYECTOS/new_company/src/main/java/com/caprepa/apivaleamigo/modules",
-        "type": "api",
-        "schemaType": "not-root",
-        "module": "references",
-        "package": "com.caprepa.apivaleamigo",
-        "properties": [
-            { "type": "CPerson", "name": "cperson", "importable": true },
-            { "type": "String", "name": "relationship" },
-            { "type": "String", "name": "phone" },
-            { "type": "String", "name": "fullname" }
+            { "type": "integer", "name": "idUser" }
         ]
     }
-    
 ]

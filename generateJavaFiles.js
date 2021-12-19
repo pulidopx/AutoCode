@@ -60,7 +60,7 @@ module.exports = function(reqFile) {
       // GENERATE REST  modules.module.domain.ports.in
       console.log(`GENERATE DOMAIN PORTS IN ${capitalize(reqFile.module)}Rest.java \n`);
       const restPath = `${reqFile.rootDir}/${reqFile.source}/domain/ports/in/rest/${capitalize(reqFile.module)}Rest.java`;
-      generateDocumentFile(restPath, restSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}Rest.java" created successfully.`));
+      // generateDocumentFile(restPath, restSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}Rest.java" created successfully.`));
   
       // GENERATE PERSISTENCE modules.module.domain.ports.out.persistence
       console.log(`GENERATE DOMAIN PORTS OUT ${capitalize(reqFile.module)}Persistence.java \n`);
@@ -77,7 +77,7 @@ module.exports = function(reqFile) {
       // GENERATE INFRASTRUCTURE modules.module.infrastructure.adapter.in.rest
       console.log(`GENERATE INFRASTRUCTURE ADAPTERS IN REST ${capitalize(reqFile.module)}Controller.java \n`);
       const controllerPath = `${reqFile.rootDir}/${reqFile.source}/infrastructure/adapters/in/rest/${capitalize(reqFile.module)}Controller.java`;
-      generateDocumentFile(controllerPath, controllerSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}Controller.java" created successfully.`));
+      // generateDocumentFile(controllerPath, controllerSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}Controller.java" created successfully.`));
   
       // GENERATE  modules.module.infrastructure.adapter.out.persistence.mysql
       console.log(`GENERATE INFRASTRUCTURE PORTS OUT PERSISTENCE MYSQL ${capitalize(reqFile.module)}PersistenceMysql.java \n`);
@@ -93,7 +93,7 @@ module.exports = function(reqFile) {
       // GENERATE  modules.module.infrastructure.services
       console.log(`GENERATE INFRASTRUCTURE SERVICES ${capitalize(reqFile.module)}ServiceImpl.java \n`);
       const serviceImplPath = `${reqFile.rootDir}/${reqFile.source}/infrastructure/services/${capitalize(reqFile.module)}ServiceImpl.java`;
-      generateDocumentFile(serviceImplPath, serviceImplSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}ServiceImpl.java" created successfully.`));
+      // generateDocumentFile(serviceImplPath, serviceImplSource(reqFile), () => console.log(`File "${capitalize(reqFile.module)}ServiceImpl.java" created successfully.`));
       console.log(`\n=============================================================================================\n`);
 
       return;

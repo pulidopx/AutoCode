@@ -24,9 +24,11 @@ const iterateEntityProps = (props) => {
     let propString = '';
     for (let index = 0; index < props.length; index++) {
         const prop = props[index];
+
+        const isEntityModel = prop.importable ? 'Entity' : '';
         propString += `
     @Column()
-    private ${capitalize(prop.type)} ${(prop.name)};
+    private ${capitalize(prop.type)}${isEntityModel} ${(prop.name)};
       `;
         
     }
